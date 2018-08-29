@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @{
+        var timeStamp = DateTime.Now.Ticks.ToString();
+    }
+</head>
+<body onload="Redia.Calculator.Tools.HandleOnload();">
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    <script src="~/Scripts/jquery-2.1.1.min.js?t=@timeStamp"></script>
+
+    <script src="~/Scripts/bootstrap.min.js?t=@timeStamp"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js?t=@timeStamp"></script>
+    <script src="~/Scripts/jquery.validate.min.js?t=@timeStamp"></script>
+    <script src="~/Scripts/Calculator.js?t=@timeStamp"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
